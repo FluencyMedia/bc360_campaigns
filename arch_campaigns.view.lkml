@@ -1,6 +1,5 @@
 view: arch_campaigns {
-  label: "BC360 - Campaigns"
-  view_label: "3. Campaigns"
+  label: "3. Campaigns"
 
   sql_table_name: arch_campaigns.arch_campaigns ;;
 
@@ -10,6 +9,7 @@ view: arch_campaigns {
   dimension: row_num {
     hidden: yes
     type: number
+    primary_key: yes
     sql: ${TABLE}.row_num ;;
   }
 
@@ -104,6 +104,8 @@ view: arch_campaigns {
     group_label: "Metrics - Base Values"
     label: "Campaign Tier*"
 
+    hidden: yes
+
     type: string
     sql: ${TABLE}.campaign_tier ;;
   }
@@ -193,9 +195,10 @@ view: arch_campaigns {
   }
 
   dimension: agency {
-    view_label: "1. Client/Account"
     label: "Agency"
     description: "Agency Managing Any Given Campaign"
+
+    hidden: yes
 
     type: string
     sql: ${TABLE}.agency ;;

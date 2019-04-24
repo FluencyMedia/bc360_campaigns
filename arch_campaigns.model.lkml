@@ -10,3 +10,8 @@ explore: arch_campaigns {
   group_label: "BC360 - Admin"
   label: "Campaign Architecture"
 }
+
+explore: arch_campaigns_admin {
+  group_label: "BC360 - Admin"
+  label: "Campaign Architecture [ADMIN]"
+}
