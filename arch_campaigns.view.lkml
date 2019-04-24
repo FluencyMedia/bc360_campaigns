@@ -2,7 +2,7 @@ view: arch_campaigns {
   label: "BC360 - Campaigns"
   view_label: "3. Campaigns"
 
-  sql_table_name: arch_campaigns.arch_campaigns_live ;;
+  sql_table_name: arch_campaigns.arch_campaigns ;;
 
 
   ########## METADATA { ##########
