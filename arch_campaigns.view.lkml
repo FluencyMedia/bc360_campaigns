@@ -1,7 +1,15 @@
 view: arch_campaigns {
   label: "3. Campaigns"
 
-  sql_table_name: bc360-main.arch_campaigns.arch_campaigns ;;
+  derived_table: {
+    # datagroup_trigger: dg_bc360_clients
+
+    sql:  SELECT
+            ac.*
+         FROM arch_campaigns.arch_campaigns ac;;
+  }
+
+  # sql_table_name: bc360-main.arch_campaigns.arch_campaigns ;;
 
 
   ########## METADATA { ##########
