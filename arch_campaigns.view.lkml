@@ -6,7 +6,7 @@ view: arch_campaigns {
 
     sql:  SELECT
             ac.*
-         FROM arch_campaigns.arch_campaigns ac;;
+         FROM `arch_campaigns.arch_campaigns` ac;;
   }
 
   # sql_table_name: bc360-main.arch_campaigns.arch_campaigns ;;
