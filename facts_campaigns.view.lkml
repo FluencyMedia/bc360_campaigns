@@ -39,7 +39,7 @@ view: facts_campaigns {
   }
 
   dimension: adgroup_id {
-    label: "Account ID"
+    label: "Ad Group ID"
     type: string
 
     sql: ${TABLE}.account_id ;;
