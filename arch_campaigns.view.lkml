@@ -20,9 +20,9 @@ view: arch_campaigns {
             CAST(ac.campaign_matchtype AS STRING) campaign_matchtype,
             CAST(ac.adgroup AS STRING) adgroup,
             CAST(ac.campaign_agency AS STRING) campaign_agency,
-            CAST(ac.account_id AS STRING) account_id,
-            CAST(ac.CAST(ac.campaign_id AS STRING) campaign_id,
-            CAST(ac.adgroup_id AS STRING) adgroup_id,
+            CAST(ac.account_id AS INT64) account_id,
+            CAST(ac.campaign_id AS INT64) campaign_id,
+            CAST(ac.adgroup_id AS INT64) adgroup_id,
             CAST(ac.account_uid AS STRING) account_uid,
             CAST(ac.campaign_uid AS STRING) campaign_uid,
             CAST(ac.adgroup_uid AS STRING) adgroup_uid
