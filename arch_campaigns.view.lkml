@@ -5,7 +5,27 @@ view: arch_campaigns {
     # datagroup_trigger: dg_bc360_clients
 
     sql:  SELECT
-            ac.*
+            CAST(ac.medium AS STRING) medium,
+            CAST(ac.organization_id AS STRING) organization_id,
+            CAST(ac.program AS STRING) program,
+            CAST(ac.campaign AS STRING) campaign,
+            CAST(ac.service_line_code AS STRING) service_line_code,
+            CAST(ac.service_line AS STRING) service_line,
+            CAST(ac.service_offering AS STRING) service_offering,
+            CAST(ac.service_detail AS STRING) service_detail,
+            CAST(ac.campaign_group AS STRING) campaign_group,
+            CAST(ac.campaign_region AS STRING) campaign_region,
+            CAST(ac.campaign_location AS STRING) campaign_location,
+            CAST(ac.campaign_tier AS STRING) campaign_tier,
+            CAST(ac.campaign_matchtype AS STRING) campaign_matchtype,
+            CAST(ac.adgroup AS STRING) adgroup,
+            CAST(ac.campaign_agency AS STRING) campaign_agency,
+            CAST(ac.account_id AS STRING) account_id,
+            CAST(ac.CAST(ac.campaign_id AS STRING) campaign_id,
+            CAST(ac.adgroup_id AS STRING) adgroup_id,
+            CAST(ac.account_uid AS STRING) account_uid,
+            CAST(ac.campaign_uid AS STRING) campaign_uid,
+            CAST(ac.adgroup_uid AS STRING) adgroup_uid
          FROM `arch_campaigns.arch_campaigns` ac;;
   }
 
