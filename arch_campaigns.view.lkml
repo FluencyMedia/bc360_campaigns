@@ -47,7 +47,7 @@ view: arch_campaigns {
 
   dimension: campaign_id {
     hidden: yes
-    type: string
+    type: number
     sql: ${TABLE}.campaign_id ;;
   }
 
@@ -59,7 +59,7 @@ view: arch_campaigns {
 
   dimension: adgroup_id {
     hidden: yes
-    type: string
+    type: number
     sql: ${TABLE}.adgroup_id ;;
   }
 

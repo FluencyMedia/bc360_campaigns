@@ -26,21 +26,21 @@ view: facts_campaigns {
 
   dimension: account_id {
     label: "Account ID"
-    type: string
+    type: number
 
     sql: ${TABLE}.account_id ;;
   }
 
   dimension: campaign_id {
     label: "Campaign ID"
-    type: string
+    type: number
 
     sql: ${TABLE}.campaign_id ;;
   }
 
   dimension: adgroup_id {
     label: "Ad Group ID"
-    type: string
+    type: number
 
     sql: ${TABLE}.account_id ;;
   }
@@ -85,13 +85,60 @@ view: facts_campaigns {
     sql: ${TABLE}.cost ;;
   }
 
-  measure: outcomes_bulk {
+  measure: outcomes_bulk_sum {
     label: "# Outcomes"
     type: sum
 
     value_format_name: decimal_0
     sql: ${TABLE}.outcomes_bulk ;;
   }
+
+  measure: ctr {
+    view_label: "5. Performance"
+    label: "% CTR"
+
+    type: number
+    value_format_name: percent_2
+
+    sql: 1.0*(${clicks_sum}) / nullif(${impressions_sum},0) ;;  }
+
+  measure: cpc {
+    view_label: "5. Performance"
+    label: "$ CPC"
+
+    type: number
+    value_format_name: usd
+
+    sql: 1.0*(${cost_sum}) / nullif(${clicks_sum},0) ;;  }
+
+  measure: cpm {
+    view_label: "5. Performance"
+    label: "$ CPM"
+
+    type: number
+    value_format_name: usd
+
+    sql: 1.0*(${cost_sum}) / nullif((${impressions_sum}/1000),0) ;;  }
+
+  measure: cpo {
+    view_label: "6. Outcomes"
+    label: "$ CPO"
+    description: "Cost / Outcome"
+
+    type: number
+    value_format_name: usd
+
+    sql: 1.0*(${cost_sum}) / nullif(${outcomes_bulk_sum},0) ;;  }
+
+  measure: otr {
+    view_label: "6. Outcomes"
+    label: "% OTR"
+    description: "Outcomes / Clicks"
+
+    type: number
+    value_format_name: percent_2
+
+    sql: 1.0*(${outcomes_bulk_sum}) / nullif(${clicks_sum},0) ;;  }
 
 }
 
