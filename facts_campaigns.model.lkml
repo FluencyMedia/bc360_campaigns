@@ -26,3 +26,13 @@ explore: facts_campaigns {
     sql_on: ${arch_campaigns_admin.organization_id} = ${arch_clients_admin.organization_id} ;;
   }
 }
+
+explore: tax_campaigns_live {
+  group_label: "1. BC360 - NESTED"
+  label: "TAX TEST - Campaigns"
+
+  join: tax_campaigns_live__ids {
+    sql: ,UNNEST(${tax_campaigns_live.ids}) as ${tax_campaigns_live.ids} ;;
+    relationship: one_to_many
+  }
+}
