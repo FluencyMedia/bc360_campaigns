@@ -2,12 +2,16 @@ view: facts_campaigns {
   derived_table: {
     sql: SELECT
             ROW_NUMBER() OVER () row_num,
-            *
+            "PPC" medium,
+            fxcmp.*,
+              FARM_FINGERPRINT(FORMAT("%s", fxcmp.account_id)) account_uid,
+              FARM_FINGERPRINT(FORMAT("%s-%s", fxcmp.account_id, fxcmp.campaign_id)) campaign_uid,
+              FARM_FINGERPRINT(FORMAT("%s-%s-%s", fxcmp.account_id, fxcmp.campaign_id, fxcmp.adgroup_id)) adgroup_uid
           FROM (
             SELECT * FROM `arch_campaigns.facts_campaigns_bq`
             UNION ALL
             SELECT * FROM `arch_campaigns.facts_campaigns_sm`
-          ) ;;
+          ) fxcmp ;;
   }
 
   dimension: row_num {

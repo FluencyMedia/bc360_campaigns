@@ -6,7 +6,7 @@ view: arch_campaigns {
 
     sql:  SELECT
             ROW_NUMBER() OVER () row_num,
-            CAST(ac.medium AS STRING) medium,
+            IFNULL(CAST(ac.medium AS STRING), "PPC") medium,
             CAST(ac.organization_id AS STRING) organization_id,
             CAST(ac.program AS STRING) program,
             CAST(ac.campaign AS STRING) campaign,
@@ -20,13 +20,13 @@ view: arch_campaigns {
             CAST(ac.campaign_tier AS STRING) campaign_tier,
             CAST(ac.campaign_matchtype AS STRING) campaign_matchtype,
             CAST(ac.adgroup AS STRING) adgroup,
-            CAST(ac.campaign_agency AS STRING) campaign_agency,
+            CAST(ac.agency AS STRING) campaign_agency,
             CAST(ac.account_id AS INT64) account_id,
             CAST(ac.campaign_id AS INT64) campaign_id,
             CAST(ac.adgroup_id AS INT64) adgroup_id,
-            CAST(ac.account_uid AS STRING) account_uid,
-            CAST(ac.campaign_uid AS STRING) campaign_uid,
-            CAST(ac.adgroup_uid AS STRING) adgroup_uid
+            CAST(ac.account_uid AS INT64) account_uid,
+            CAST(ac.campaign_uid AS INT64) campaign_uid,
+            CAST(ac.adgroup_uid AS INT64) adgroup_uid
          FROM `arch_campaigns.arch_campaigns` ac;;
   }
 
@@ -86,7 +86,7 @@ view: arch_campaigns {
 
   dimension: adgroup_uid {
     hidden: yes
-    type: string
+    type: number
     sql: ${TABLE}.adgroup_uid ;;
   }
 
