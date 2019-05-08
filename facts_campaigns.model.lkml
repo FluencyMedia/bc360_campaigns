@@ -20,7 +20,9 @@ explore: facts_campaigns {
     ;;
   }
 
-  # join: arch_clients_admin {
-
-  # }
+  join: arch_clients_admin {
+    relationship: one_to_many
+    type: left_outer
+    sql_on: ${arch_campaigns_admin.organization_id} = ${arch_clients_admin.organization_id} ;;
+  }
 }
