@@ -7,7 +7,6 @@ view: arch_campaigns {
     sql:  SELECT
             ROW_NUMBER() OVER () row_num,
             IFNULL(CAST(ac.medium AS STRING), "PPC") medium,
-            CAST(ac.organization_id AS STRING) organization_id,
             CAST(ac.program AS STRING) program,
             CAST(ac.campaign AS STRING) campaign,
             CAST(ac.service_line_code AS STRING) service_line_code,
@@ -21,6 +20,7 @@ view: arch_campaigns {
             CAST(ac.campaign_matchtype AS STRING) campaign_matchtype,
             CAST(ac.adgroup AS STRING) adgroup,
             CAST(ac.agency AS STRING) campaign_agency,
+            CAST(ac.organization_id AS INT64) organization_id,
             CAST(ac.account_id AS INT64) account_id,
             CAST(ac.campaign_id AS INT64) campaign_id,
             CAST(ac.adgroup_id AS INT64) adgroup_id,
