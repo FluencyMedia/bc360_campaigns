@@ -42,12 +42,12 @@ view: facts_campaigns {
     label: "Ad Group ID"
     type: number
 
-    sql: ${TABLE}.account_id ;;
+    sql: ${TABLE}.adgroup_id ;;
   }
 
   measure: date_min {
     label: "Date - Start"
-    type: min
+    type: date
 
     sql: ${TABLE}.date_start ;;
   }
@@ -55,7 +55,7 @@ view: facts_campaigns {
 
   measure: date_max {
     label: "Date - End"
-    type: max
+    type: date
 
     # value_format: ""
     sql: ${TABLE}.date_end ;;
@@ -86,11 +86,19 @@ view: facts_campaigns {
   }
 
   measure: outcomes_bulk_sum {
-    label: "# Outcomes"
+    label: "# Outcomes [BULK]"
     type: sum
 
     value_format_name: decimal_0
     sql: ${TABLE}.outcomes_bulk ;;
+  }
+
+  measure: outcomes_sum {
+    label: "# Outcomes"
+    type: sum
+
+    value_format_name: decimal_0
+    sql: ${TABLE}.outcomes ;;
   }
 
   measure: ctr {
