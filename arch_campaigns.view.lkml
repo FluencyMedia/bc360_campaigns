@@ -56,7 +56,7 @@ view: arch_campaigns {
 
   dimension: organization_id {
     hidden: yes
-    type: string
+    type: number
     sql: ${TABLE}.organization_id ;;
   }
 
