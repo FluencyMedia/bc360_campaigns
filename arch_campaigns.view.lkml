@@ -20,11 +20,13 @@ view: arch_campaigns {
             CAST(ac.campaign_matchtype AS STRING) campaign_matchtype,
             CAST(ac.adgroup AS STRING) adgroup,
             CAST(ac.agency AS STRING) campaign_agency,
-            CAST(ac.organization_id AS INT64) organization_id,
+            CAST(ac.organization_id AS STRING) organization_id,
+            CAST(ac.organization_id AS INT64) organization_uid,
             CAST(ac.account_id AS INT64) account_id,
             CAST(ac.campaign_id AS INT64) campaign_id,
             CAST(ac.adgroup_id AS INT64) adgroup_id,
             CAST(ac.account_uid AS INT64) account_uid,
+            CAST(ac.account_uid AS INT64) organization_uid,
             CAST(ac.campaign_uid AS INT64) campaign_uid,
             CAST(ac.adgroup_uid AS INT64) adgroup_uid
          FROM `arch_campaigns.arch_campaigns` ac;;
