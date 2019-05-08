@@ -1,12 +1,21 @@
 view: facts_campaigns {
   derived_table: {
     sql: SELECT
+            ROW_NUMBER() OVER () row_num,
             *
           FROM (
             SELECT * FROM `arch_campaigns.facts_campaigns_bq`
             UNION ALL
             SELECT * FROM `arch_campaigns.facts_campaigns_sm`
           ) ;;
+  }
+
+  dimension: row_num {
+    label: "Row Index"
+    type: number
+    primary_key: yes
+
+    sql: ${TABLE}.row_num ;;
   }
 
   dimension: source {

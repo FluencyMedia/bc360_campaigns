@@ -5,6 +5,7 @@ view: arch_campaigns {
     # datagroup_trigger: dg_bc360_clients
 
     sql:  SELECT
+            ROW_NUMBER() OVER () row_num,
             CAST(ac.medium AS STRING) medium,
             CAST(ac.organization_id AS STRING) organization_id,
             CAST(ac.program AS STRING) program,
