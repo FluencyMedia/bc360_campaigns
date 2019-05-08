@@ -44,13 +44,13 @@ view: arch_campaigns {
 
   dimension: client_id {
     hidden: yes
-    type: string
+    type: number
     sql: ${TABLE}.client_id ;;
   }
 
   dimension: client_uid {
     hidden: yes
-    type: string
+    type: number
     sql: ${TABLE}.client_uid ;;
   }
 
@@ -62,7 +62,7 @@ view: arch_campaigns {
 
   dimension: organization_uid {
     hidden: yes
-    type: string
+    type: number
     sql: ${TABLE}.organization_uid ;;
   }
 
@@ -74,7 +74,7 @@ view: arch_campaigns {
 
   dimension: campaign_uid {
     hidden: yes
-    type: string
+    type: number
     sql: ${TABLE}.campaign_uid ;;
   }
 

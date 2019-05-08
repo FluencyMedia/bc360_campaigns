@@ -4,9 +4,9 @@ view: facts_campaigns {
             ROW_NUMBER() OVER () row_num,
             "PPC" medium,
             fxcmp.*,
-              FARM_FINGERPRINT(FORMAT("%s", fxcmp.account_id)) account_uid,
-              FARM_FINGERPRINT(FORMAT("%s-%s", fxcmp.account_id, fxcmp.campaign_id)) campaign_uid,
-              FARM_FINGERPRINT(FORMAT("%s-%s-%s", fxcmp.account_id, fxcmp.campaign_id, fxcmp.adgroup_id)) adgroup_uid
+              FARM_FINGERPRINT(FORMAT("%d", fxcmp.account_id)) account_uid,
+              FARM_FINGERPRINT(FORMAT("%d-%d", fxcmp.account_id, fxcmp.campaign_id)) campaign_uid,
+              FARM_FINGERPRINT(FORMAT("%d-%d-%d", fxcmp.account_id, fxcmp.campaign_id, fxcmp.adgroup_id)) adgroup_uid
           FROM (
             SELECT * FROM `arch_campaigns.facts_campaigns_bq`
             UNION ALL
