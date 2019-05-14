@@ -2,7 +2,7 @@ view: arch_campaigns {
   label: "3. Campaigns"
 
   derived_table: {
-    # datagroup_trigger: dg_bc360_clients
+    datagroup_trigger: dg_bc360_clients
 
     sql:  SELECT
             ROW_NUMBER() OVER () row_num,

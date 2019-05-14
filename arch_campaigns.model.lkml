@@ -11,4 +11,5 @@ label: "BC360 - Admin"
 explore: arch_campaigns_admin {
   group_label: "BC360 - Admin"
   label: "Campaign Architecture [ADMIN]"
+  hidden: yes
 }
