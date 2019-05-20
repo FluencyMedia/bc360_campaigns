@@ -9,7 +9,10 @@ persist_with: dg_bc360_clients
 label: "BC360 - Admin"
 
 explore: arch_campaigns_admin {
-  group_label: "BC360 - Admin"
   label: "Campaign Architecture [ADMIN]"
-  hidden: yes
+  hidden: no
+}
+
+explore: flat_campaigns {
+  label: "Campaign Architecture [FLAT]"
 }
