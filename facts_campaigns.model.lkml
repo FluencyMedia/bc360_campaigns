@@ -12,6 +12,7 @@ label: "BC360 - Admin"
 explore: facts_campaigns {
   group_label: "BC360 - QA"
   label: "FACTS - Campaigns"
+  hidden: yes
 
   join: arch_campaigns_admin {
     relationship: one_to_many

@@ -6,7 +6,7 @@ include: "*.view.lkml"
 
 persist_with: dg_bc360_clients
 
-label: "BC360 - Admin"
+label: "BC360 - Admin Tools"
 
 explore: arch_campaigns_admin {
   label: "Campaign Architecture [ADMIN]"
@@ -14,5 +14,6 @@ explore: arch_campaigns_admin {
 }
 
 explore: flat_campaigns {
+  hidden: yes
   label: "Campaign Architecture [FLAT]"
 }
