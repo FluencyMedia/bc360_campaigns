@@ -25,7 +25,7 @@ view: arch_campaigns_admin {
            campaign,
            CAST(adgroup_id AS INT64) adgroup_id,
            adgroup
-         FROM flat_arch.flat_campaigns ap;;
+         FROM arch_campaigns.arch_campaigns_base ap;;
   }
 
 #>>>>>>>>>  METADATA  {
