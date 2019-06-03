@@ -1,30 +1,30 @@
 view: arch_campaigns_admin {
-  # sql_table_name: bc360_arch_marketing.arch_program ;;
 
   derived_table: {
     datagroup_trigger: dg_bc360_campaigns
 
     sql:  SELECT
-           program,
-           service_line_code,
-           service_line,
-           service_offering,
-           service_detail,
-           campaign_group_id,
-           campaign_group,
-           campaign_region,
-           campaign_location,
-           campaign_tier,
-           campaign_matchtype,
-           organization_id,
-           agency,
-           CAST(account_id AS INT64) account_id,
-           account,
-           medium,
-           CAST(campaign_id AS INT64) campaign_id,
-           campaign,
-           CAST(adgroup_id AS INT64) adgroup_id,
-           adgroup
+            program,
+            service_line_code,
+            service_line,
+            service_offering,
+            service_detail,
+            campaign_group_id,
+            campaign_group,
+            campaign_region,
+            campaign_location,
+            campaign_tier,
+            campaign_matchtype,
+            organization_id,
+            mode,
+            agency,
+            CAST(account_id AS INT64) account_id,
+            account,
+            medium,
+            CAST(campaign_id AS INT64) campaign_id,
+            campaign,
+            CAST(adgroup_id AS INT64) adgroup_id,
+            adgroup
          FROM arch_campaigns.arch_campaigns_base ap;;
   }
 
