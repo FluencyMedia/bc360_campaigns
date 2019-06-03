@@ -2,7 +2,7 @@ view: arch_campaigns_admin {
   # sql_table_name: bc360_arch_marketing.arch_program ;;
 
   derived_table: {
-    # datagroup_trigger: dg_bc360_bq
+    datagroup_trigger: dg_bc360_campaigns
 
     sql:  SELECT
            program,
