@@ -17,3 +17,8 @@ explore: flat_campaigns {
   hidden: yes
   label: "Campaign Architecture [FLAT]"
 }
+
+explore: arch_campaigns {
+  label: "Campaign Architecture"
+  hidden: no
+}

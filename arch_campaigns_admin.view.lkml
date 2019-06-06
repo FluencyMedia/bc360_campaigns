@@ -28,65 +28,6 @@ view: arch_campaigns_admin {
          FROM arch_campaigns.arch_campaigns_base ap;;
   }
 
-#>>>>>>>>>  METADATA  {
-
-  dimension: organization_id {
-    view_label: "Z - Metadata"
-    group_label: "Database IDs"
-    label: "Organization ID [Arch_Program]"
-    description: "Organization ID [Arch_Program]"
-
-    hidden: no
-
-    type: string
-
-    sql: ${TABLE}.organization_id ;;
-  }
-
-  dimension: account_id {
-    view_label: "Z - Metadata"
-    group_label: "Database IDs"
-    label: "Account ID [Arch_Program]"
-    description: "Account ID within given Channel [Arch_Program]"
-
-    hidden: no
-
-    type: string
-
-    sql: ${TABLE}.account_id ;;
-  }
-
-  dimension: campaign_id {
-    view_label: "Z - Metadata"
-    group_label: "Database IDs"
-    label: "Campaign ID [Arch_Program]"
-    description: "Campaign ID"
-
-    hidden: no
-
-    type: string
-
-    sql: ${TABLE}.campaign_id ;;
-  }
-
-  dimension: adgroup_id {
-    view_label: "Z - Metadata"
-    group_label: "Database IDs"
-    label: "Adgroup ID [Arch_Program]"
-    description: "Ad Group ID"
-
-    hidden: no
-    primary_key: yes
-
-    type: string
-
-    sql: ${TABLE}.adgroup_id ;;
-  }
-
-
-  #<<<<<<<<<  METADATA  }  <<<<<<<<<#
-
-
 
   ##########  DIMENSIONS  { ##########
 
@@ -417,6 +358,67 @@ view: arch_campaigns_admin {
   }
 
   ##########  MEASURES } ##########
+
+
+  ##########  METADATA  {
+
+  dimension: organization_id {
+    view_label: "Z - Metadata"
+    group_label: "Database IDs"
+    label: "Organization ID [Arch_Program]"
+    description: "Organization ID [Arch_Program]"
+
+    hidden: no
+
+    type: string
+
+    sql: ${TABLE}.organization_id ;;
+  }
+
+  dimension: account_id {
+    view_label: "Z - Metadata"
+    group_label: "Database IDs"
+    label: "Account ID [Arch_Program]"
+    description: "Account ID within given Channel [Arch_Program]"
+
+    hidden: no
+
+    type: string
+
+    sql: ${TABLE}.account_id ;;
+  }
+
+  dimension: campaign_id {
+    view_label: "Z - Metadata"
+    group_label: "Database IDs"
+    label: "Campaign ID [Arch_Program]"
+    description: "Campaign ID"
+
+    hidden: no
+
+    type: string
+
+    sql: ${TABLE}.campaign_id ;;
+  }
+
+  dimension: adgroup_id {
+    view_label: "Z - Metadata"
+    group_label: "Database IDs"
+    label: "Adgroup ID [Arch_Program]"
+    description: "Ad Group ID"
+
+    hidden: no
+    primary_key: yes
+
+    type: string
+
+    sql: ${TABLE}.adgroup_id ;;
+  }
+
+
+  ##########  METADATA  }  ##########
+
+
 
 
 }
