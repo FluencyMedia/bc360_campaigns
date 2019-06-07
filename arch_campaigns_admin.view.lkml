@@ -46,6 +46,7 @@ view: arch_campaigns_admin {
     [Program]
     {% endif %}"
 
+    hidden: yes
     type: string
 
     sql:  {% if campaign._is_filtered %}
@@ -70,6 +71,7 @@ view: arch_campaigns_admin {
     [Service]
     {% endif %}"
 
+    hidden: yes
     type: string
 
     sql:  {% if service_line._is_filtered %}
@@ -90,6 +92,7 @@ view: arch_campaigns_admin {
     [[Agency]]
     {% endif %}"
 
+    hidden: yes
     type: string
 
     sql:  {% if service_line._is_filtered %}
@@ -117,6 +120,7 @@ view: arch_campaigns_admin {
     label: "Channel Account"
     description: "Account name within given Channel (Ads, Display, etc.)"
 
+    hidden: yes
     type: string
     sql: ${TABLE}.account ;;
   }
@@ -155,6 +159,7 @@ view: arch_campaigns_admin {
     group_label: "Metrics - Base Values"
     label: "Campaign Tier*"
 
+    hidden: yes
     type: string
     sql: ${TABLE}.campaign_tier ;;
   }
@@ -225,7 +230,21 @@ view: arch_campaigns_admin {
     description: "Service Line"
 
     type: string
-    sql: ${TABLE}.service_line ;;
+
+    order_by_field: combo_program_service
+    sql: IF((${TABLE}.program = ${TABLE}.service_line), ${TABLE}.service_line, FORMAT("%s (%s)", ${TABLE}.service_line, ${TABLE}.program)) ;;
+    }
+
+  dimension: combo_program_service {
+    view_label: "2. Services"
+    group_label: "Z - Combined Labels"
+    label: "Program | Service"
+    description: "Useful as a hidden field for sorting"
+
+    hidden: no
+    type: string
+
+    sql: FORMAT("%s | %s", ${TABLE}.program, ${TABLE}.service_line) ;;
   }
 
   dimension: program {
@@ -263,6 +282,7 @@ view: arch_campaigns_admin {
     label: "Service Line Code"
     description: "Service Line Code"
 
+    hidden: yes
     type: string
     sql: ${TABLE}.service_line_code ;;
   }
@@ -292,6 +312,7 @@ view: arch_campaigns_admin {
     label: "Agency"
     description: "Agency Managing Any Given Campaign"
 
+    hidden: yes
     type: string
     sql: ${TABLE}.agency ;;
   }
@@ -307,6 +328,8 @@ view: arch_campaigns_admin {
     group_label: "Z - Category Counts"
     label: "# Programs"
     description: "Number of Service Programs"
+
+    hidden: yes
     type: count_distinct
     value_format_name: decimal_0
 
@@ -318,6 +341,8 @@ view: arch_campaigns_admin {
     group_label: "Z - Category Counts"
     label: "# Service Lines"
     description: "Number of Service Lines"
+
+    hidden: yes
     type: count_distinct
     value_format_name: decimal_0
 
@@ -329,6 +354,8 @@ view: arch_campaigns_admin {
     group_label: "Z - Category Counts"
     label: "# Campaign Groups"
     description: "Number of Digital Channel Campaign Groups"
+
+    hidden: yes
     type: count_distinct
     value_format_name: decimal_0
 
@@ -340,6 +367,8 @@ view: arch_campaigns_admin {
     group_label: "Z - Category Counts"
     label: "# Campaigns"
     description: "Number of Digital Channel Campaigns"
+
+    hidden: yes
     type: count_distinct
     value_format_name: decimal_0
 
@@ -351,6 +380,8 @@ view: arch_campaigns_admin {
     group_label: "Z - Category Counts"
     label: "# Ad Groups"
     description: "Number of Digital Channel Ad Groups"
+
+    hidden: yes
     type: count_distinct
     value_format_name: decimal_0
 
@@ -368,7 +399,7 @@ view: arch_campaigns_admin {
     label: "Organization ID [Arch_Program]"
     description: "Organization ID [Arch_Program]"
 
-    hidden: no
+    hidden: yes
 
     type: string
 
@@ -381,7 +412,7 @@ view: arch_campaigns_admin {
     label: "Account ID [Arch_Program]"
     description: "Account ID within given Channel [Arch_Program]"
 
-    hidden: no
+    hidden: yes
 
     type: string
 
@@ -394,7 +425,7 @@ view: arch_campaigns_admin {
     label: "Campaign ID [Arch_Program]"
     description: "Campaign ID"
 
-    hidden: no
+    hidden: yes
 
     type: string
 
@@ -407,7 +438,7 @@ view: arch_campaigns_admin {
     label: "Adgroup ID [Arch_Program]"
     description: "Ad Group ID"
 
-    hidden: no
+    hidden: yes
     primary_key: yes
 
     type: string
