@@ -241,7 +241,7 @@ view: arch_campaigns_admin {
     label: "Program | Service"
     description: "Useful as a hidden field for sorting"
 
-    hidden: yes
+    hidden: no
     type: string
 
     sql: FORMAT("%s | %s", ${TABLE}.program, ${TABLE}.service_line) ;;
