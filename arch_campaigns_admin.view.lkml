@@ -224,6 +224,15 @@ view: arch_campaigns_admin {
     sql: ${TABLE}.adgroup ;;
   }
 
+  dimension: mode {
+    view_label: "3. Channel"
+    label: "Mode"
+    description: "'Call Only', 'CRM Targeting', 'Beaumont.org Retargeting', etc."
+
+    type: string
+    sql: ${TABLE}.mode ;;
+    }
+
   dimension: service_line {
     view_label: "2. Services"
     label: "Service Line"
