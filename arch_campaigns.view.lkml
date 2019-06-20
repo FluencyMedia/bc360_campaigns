@@ -4,11 +4,11 @@ view: arch_campaigns {
   extends: [arch_campaigns_admin]
 
   dimension: organization_id { hidden: yes }
-  dimension: account_id { hidden: yes }
-  dimension: campaign_id { hidden: yes }
-  dimension: adgroup_id { hidden: yes }
-  dimension: campaign_tier_base { hidden: yes }
-  dimension: service_line_code { hidden: yes }
+  dimension: account_id { hidden: no }
+  dimension: campaign_id { hidden: no }
+  dimension: adgroup_id { hidden: no }
+  dimension: campaign_tier_base { hidden: no }
+  dimension: service_line_code { hidden: no }
 
   measure: num_programs { hidden: yes }
   measure: num_services { hidden: yes }

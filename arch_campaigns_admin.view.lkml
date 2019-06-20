@@ -11,6 +11,7 @@ view: arch_campaigns_admin {
             service_detail,
             campaign_group_id,
             campaign_group,
+            campaign_label,
             campaign_region,
             campaign_location,
             campaign_tier,
@@ -144,6 +145,18 @@ view: arch_campaigns_admin {
     type: string
     sql: ${TABLE}.campaign_group ;;
   }
+
+  dimension: campaign_label {
+    view_label: "3. Channel"
+    group_label: "Campaign Architecture"
+    label: "Campaign Label"
+    description: "Campaign Label Within Digital Channel"
+
+    type: string
+    sql: ${TABLE}.campaign_label ;;
+  }
+
+
 
   dimension: campaign_region {
     view_label: "3. Channel"
