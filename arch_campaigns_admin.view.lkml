@@ -9,7 +9,7 @@ view: arch_campaigns_admin {
             service_line,
             service_offering,
             service_detail,
-            campaign_group_id,
+            # campaign_group_id,
             campaign_group,
             # campaign_label,
             campaign_region,
