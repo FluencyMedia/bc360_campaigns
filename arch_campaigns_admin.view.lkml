@@ -304,7 +304,7 @@ view: arch_campaigns_admin {
     label: "Service Line Code"
     description: "Service Line Code"
 
-    hidden: yes
+    hidden: no
     type: string
     sql: ${TABLE}.service_line_code ;;
   }
