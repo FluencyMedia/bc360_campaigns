@@ -18,6 +18,7 @@ view: arch_campaigns_admin {
             campaign_matchtype,
             organization_id,
             mode,
+            test_variation,
             agency,
             CAST(account_id AS INT64) account_id,
             account,
@@ -245,6 +246,15 @@ view: arch_campaigns_admin {
     type: string
     sql: ${TABLE}.mode ;;
     }
+
+  dimension: test_variation {
+    view_label: "3. Channel"
+    label: "Test Variation"
+    description: "'A', 'B', etc."
+
+    type: string
+    sql: IFNULL(${TABLE}.test_variation, "(No Test)") ;;
+  }
 
   dimension: service_line {
     view_label: "2. Services"
