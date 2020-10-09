@@ -4,30 +4,32 @@ view: arch_campaigns_admin {
     datagroup_trigger: dg_bc360_campaigns
 
     sql:  SELECT
+            medium,
+            account,
+            organization,
+            user_manager,
+            user_owner,
+            campaign_category,
+            campaign_group,
+            campaign,
             program,
             service_line_code,
             service_line,
             service_offering,
             service_detail,
-            # campaign_group_id,
-            campaign_group,
-            # campaign_label,
+            campaign_label,
             campaign_region,
             campaign_location,
             campaign_tier,
             campaign_matchtype,
-            organization_id,
-            mode,
-            test_variation,
             agency,
-            CAST(account_id AS INT64) account_id,
-            account,
-            medium,
-            CAST(campaign_id AS INT64) campaign_id,
-            campaign,
-            CAST(adgroup_id AS INT64) adgroup_id,
-            adgroup
-         FROM arch_campaigns.arch_campaigns_base ap;;
+            adgroup,
+            mode,
+            account_id,
+            client_id,
+            organization_id,
+            adgroup_id
+          FROM arch_campaigns.arch_campaigns_base ap;;
   }
 
 
