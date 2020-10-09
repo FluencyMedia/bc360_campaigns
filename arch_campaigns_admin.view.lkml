@@ -149,18 +149,45 @@ view: arch_campaigns_admin {
     sql: ${TABLE}.campaign_group ;;
   }
 
-  # dimension: campaign_label {
-  #   view_label: "3. Channel"
-  #   group_label: "Campaign Architecture"
-  #   label: "Campaign Label"
-  #   description: "Campaign Label Within Digital Channel"
-  #
-  #   type: string
-  #   sql: ${TABLE}.campaign_label ;;
-  # }
+  dimension: campaign_label {
+    view_label: "3. Channel"
+    group_label: "Campaign Architecture"
+    label: "Campaign Label"
+    description: "Campaign Label Within Digital Channel"
 
+    type: string
+    sql: ${TABLE}.campaign_label ;;
+  }
 
+  dimension: campaign_category {
+    view_label: "3. Channel"
+    group_label: "Campaign Architecture"
+    label: "Campaign Category"
+    description: "[Specialties|Medical Group|...]"
 
+    type: string
+    sql: ${TABLE}.campaign_category ;;
+  }
+
+  dimension: user_manager {
+    view_label: "1. Client/Account"
+    group_label: "Users"
+    label: "User - Manager"
+    description: "Higher-level manager who may need regular reports"
+
+    type: string
+    sql: ${TABLE}.user_manager ;;
+    }
+
+  dimension: user_owner {
+    view_label: "1. Client/Account"
+    group_label: "Users"
+    label: "User - Owner"
+    description: "Direct client stakeholder who may need regular reports"
+
+    type: string
+    sql: ${TABLE}.user_owner ;;
+  }
   dimension: campaign_region {
     view_label: "3. Channel"
     group_label: "Campaign Geography"
