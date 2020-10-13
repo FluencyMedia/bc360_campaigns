@@ -1,3 +1,5 @@
+include: "/**/*.view.lkml"
+
 view: flat_campaigns {
   sql_table_name: flat_arch.flat_campaigns ;;
 

@@ -1,3 +1,5 @@
+include: "/**/*.view.lkml"
+
 view: tax_campaigns_live {
   sql_table_name: tax_main.tax_campaigns_live ;;
 

@@ -1,3 +1,5 @@
+include: "/**/*.view.lkml"
+
 view: arch_campaigns_admin {
 
   derived_table: {

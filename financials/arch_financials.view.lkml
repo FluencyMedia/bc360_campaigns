@@ -1,3 +1,5 @@
+include: "/**/*.view.lkml"
+
 view: arch_financials {
   derived_table: {
     datagroup_trigger: dg_bc360_campaigns

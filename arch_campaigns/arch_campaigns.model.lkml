@@ -3,6 +3,7 @@ connection: "bc360_main"
 include: "//bc360_admin/bc360_triggers.lkml"
 
 include: "/**/*.view.lkml"
+include: "/**/test_*.lkml"
 
 persist_with: dg_bc360_clients
 

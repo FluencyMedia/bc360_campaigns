@@ -1,9 +1,9 @@
 connection: "bc360_main"
 
 include: "//bc360_admin/bc360_triggers.lkml"
-include: "//bc360_clients/*.view.lkml"
+include: "//bc360_clients/**/*.view.lkml"
 
-include: "*.view.lkml"
+include: "/**/*.view.lkml"
 
 persist_with: dg_bc360_clients
 

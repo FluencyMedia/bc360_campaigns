@@ -1,3 +1,5 @@
+include: "/**/*.view.lkml"
+
 view: facts_campaigns {
   derived_table: {
     sql: SELECT
