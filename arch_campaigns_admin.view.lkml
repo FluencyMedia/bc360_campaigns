@@ -26,6 +26,7 @@ view: arch_campaigns_admin {
             adgroup,
             mode,
             account_id,
+            campaign_id,
             client_id,
             organization_id,
             adgroup_id
@@ -486,7 +487,7 @@ view: arch_campaigns_admin {
     label: "Campaign ID [Arch_Program]"
     description: "Campaign ID"
 
-    hidden: yes
+    hidden: no
 
     type: string
 
