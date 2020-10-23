@@ -376,7 +376,7 @@ view: arch_campaigns_admin {
     label: "Agency"
     description: "Agency Managing Any Given Campaign"
 
-    hidden: yes
+    hidden: no
     type: string
     sql: ${TABLE}.agency ;;
   }

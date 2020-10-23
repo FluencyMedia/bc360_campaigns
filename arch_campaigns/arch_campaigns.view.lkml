@@ -10,6 +10,8 @@ view: arch_campaigns {
   dimension: campaign_tier_base { hidden: no }
   dimension: service_line_code { hidden: no }
 
+  dimension: agency { hidden: yes }
+
   measure: num_programs { hidden: yes }
   measure: num_services { hidden: yes }
   measure: num_campaign_groups { hidden: yes }
