@@ -31,7 +31,9 @@ view: arch_campaigns_admin {
             campaign_id,
             client_id,
             organization_id,
-            adgroup_id
+            adgroup_id,
+            channel_type,
+            channel_subtype,
           FROM arch_campaigns.arch_campaigns_base ap;;
   }
 
@@ -170,6 +172,26 @@ view: arch_campaigns_admin {
 
     type: string
     sql: ${TABLE}.campaign_category ;;
+  }
+
+  dimension: channel_type {
+    view_label: "3. Channel"
+    group_label: "Campaign Architecture"
+    label: "Channel Type"
+    description: "SEARCH | DISPLAY | VIDEO"
+
+    type: string
+    sql: ${TABLE}.channel_type ;;
+  }
+
+  dimension: channel_subtype {
+    view_label: "3. Channel"
+    group_label: "Campaign Architecture"
+    label: "Channel Subtype"
+    description: "Channel Type details"
+
+    type: string
+    sql: ${TABLE}.channel_subtype ;;
   }
 
   dimension: user_manager {
