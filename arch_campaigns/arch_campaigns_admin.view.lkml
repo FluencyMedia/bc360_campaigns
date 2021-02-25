@@ -260,11 +260,15 @@ view: arch_campaigns_admin {
         label: "Competitor"
       }
       when: {
-        sql: ${campaign_tier_base} IN ('General', 'Varied') ;;
+        sql: ${campaign_tier_base} = 'Varied' ;;
+        label: "Varied"
+      }
+      when: {
+        sql: ${campaign_tier_base} IN ('General', 'Varied', 'GEN') ;;
         label: "General"
       }
       when: {
-        sql: ${campaign_tier_base} IS null ;;
+        sql: (${campaign_tier_base} IS null) OR (${campaign_tier_base} IN ('NA', 'N/A')) ;;
         label: "NA"
       }
       else: "Other"
