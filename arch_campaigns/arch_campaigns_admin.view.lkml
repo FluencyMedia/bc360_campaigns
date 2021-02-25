@@ -240,6 +240,10 @@ view: arch_campaigns_admin {
 
     case: {
       when: {
+        sql: ${campaign_tier_base} = 'Brand' ;;
+        label: "Brand"
+      }
+      when: {
         sql: ${campaign_tier_base} = 'S&C' ;;
         label: "S&C"
       }
@@ -250,10 +254,6 @@ view: arch_campaigns_admin {
       when: {
         sql: ${campaign_tier_base} = 'P&F' ;;
         label: "P&F"
-      }
-      when: {
-        sql: ${campaign_tier_base} = 'Brand' ;;
-        label: "Brand"
       }
       when: {
         sql: ${campaign_tier_base} = 'Competitor' ;;
