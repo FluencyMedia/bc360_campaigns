@@ -264,7 +264,7 @@ view: arch_campaigns_admin {
         label: "Varied"
       }
       when: {
-        sql: ${campaign_tier_base} IN ('General', 'Varied', 'GEN') ;;
+        sql: ${campaign_tier_base} IN ('General', 'GEN') ;;
         label: "General"
       }
       when: {
