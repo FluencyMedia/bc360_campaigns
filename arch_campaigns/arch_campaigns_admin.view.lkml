@@ -269,7 +269,7 @@ view: arch_campaigns_admin {
       }
       when: {
         sql: (${campaign_tier_base} IS null) OR (${campaign_tier_base} IN ('NA', 'N/A')) ;;
-        label: "NA"
+        label: "N/A"
       }
       else: "Other"
     }
